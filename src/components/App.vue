@@ -4,26 +4,12 @@
       <div class="inverted secondary pointing ui menu">
         <div class="header item">AUDIT</div>
         <div class="right menu">
-          <div class="ui top right pointing mobile dropdown link item">
-            Menu
-            <i class="dropdown icon"></i>
-            <div class="menu">
-              <a class="item">Classes</a>
-              <a class="item">Cocktail Hours</a>
-              <a class="item">Community</a>
-            </div>
-          </div>
-          <div class="ui dropdown link item">
-            Courses
-            <i class="dropdown icon"></i>
-            <div class="menu">
-              <a class="item">Petting</a>
-              <a class="item">Feeding</a>
-              <a class="item">Mind Reading</a>
-            </div>
-          </div>
-          <a class="item">Library</a>
-          <a class="item">Community</a>
+          <a class="item" v-link="{name: 'home' }">Home</a>
+          <a class="item" v-link="{name: 'services' }">Properties</a>
+          <a class="item" v-link="{name: 'auth.signin' }" v-if="!auth.user.authenticated">Sign in</a>
+          <a class="item" v-link="{name: 'auth.signup' }" v-if="!auth.user.authenticated">Sign up</a>
+          <a class="item" href="#" v-on:click="signout" v-if="auth.user.authenticated">Sign out</a>
+          <p class="item" class="item" v-if="auth.user.authenticated">Hi, {{ auth.user.profile.account_type['name'][0] }}</p>
         </div>
       </div>
       <img src="/static/images/cat.png" class="ui medium image">
