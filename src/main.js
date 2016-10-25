@@ -7,6 +7,7 @@ import SignUp from './components/SignUp'
 import Profile from './components/Profile'
 import Services from './components/Services'
 import ViewProfile from './components/ViewProfile'
+import Payment from './components/Payment'
 
 //===========================libraries
 import VueRouter from 'vue-router'
@@ -49,6 +50,10 @@ router.map({
     '/services' : {
         name: 'services',
         component: Services
+    },
+    '/payment' : {
+        name: 'payment',
+        component: Payment
     }
 })
 
